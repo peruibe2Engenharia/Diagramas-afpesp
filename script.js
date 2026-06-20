@@ -2,13 +2,10 @@
 const apt = new URLSearchParams(location.search).get('apto') || '301';
 document.getElementById('apt-num').textContent = apt;
 
-
-const URL_DIAGRAMA = "EL-13_DIAGR. E TAB CARGA_R02 (2).pdf"; 
+// Configuração do Botão Diagrama
 const btnDiagrama = document.getElementById('download-diagrama');
-
 if (btnDiagrama) {
-  btnDiagrama.href = URL_DIAGRAMA;
-  btnDiagrama.target = '_blank';
+  // Altera apenas o nome do arquivo final sugerido no download
   btnDiagrama.download = 'diagrama-apto-' + apt + '.pdf';
 
   btnDiagrama.addEventListener('click', () => {
@@ -18,13 +15,10 @@ if (btnDiagrama) {
   });
 }
 
-
-const URL_TABELA = "EL-13_DIAGR. E TAB CARGA_R02 (3).pdf"; 
+// Configuração do Botão Tabela
 const btnTabela = document.getElementById('download-tabela');
-
 if (btnTabela) {
-  btnTabela.href = URL_TABELA;
-  btnTabela.target = '_blank';
+  // Altera apenas o nome do arquivo final sugerido no download
   btnTabela.download = 'tabela-cargas-apto-' + apt + '.pdf';
 
   btnTabela.addEventListener('click', () => {
