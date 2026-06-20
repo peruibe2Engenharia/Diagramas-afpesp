@@ -1,12 +1,10 @@
-// O JS agora PEGA o número que já está escrito no próprio HTML
+// Captura o número do apartamento enviado pelo HTML
 const apt = document.getElementById('apt-num').textContent.trim();
 
-
-// Configuração do Botão Diagrama (Pega o PDF do HTML e força o download)
+// Configuração do Botão Diagrama
 const btnDiagrama = document.getElementById('download-diagrama');
-
 if (btnDiagrama) {
-  // Força o navegador a baixar em vez de abrir
+  // Força o nome do download usando o número que veio do HTML
   btnDiagrama.download = 'diagrama-apto-' + apt + '.pdf';
 
   btnDiagrama.addEventListener('click', () => {
@@ -16,12 +14,10 @@ if (btnDiagrama) {
   });
 }
 
-
-// Configuração do Botão Tabela (Pega o PDF do HTML e força o download)
+// Configuração do Botão Tabela
 const btnTabela = document.getElementById('download-tabela');
-
 if (btnTabela) {
-  // Força o navegador a baixar em vez de abrir
+  // Força o nome do download usando o número que veio do HTML
   btnTabela.download = 'tabela-cargas-apto-' + apt + '.pdf';
 
   btnTabela.addEventListener('click', () => {
