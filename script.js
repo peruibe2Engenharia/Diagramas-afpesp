@@ -5,9 +5,7 @@ document.getElementById('apt-num').textContent = apt;
 // Configuração do Botão Diagrama
 const btnDiagrama = document.getElementById('download-diagrama');
 if (btnDiagrama) {
-  // Altera apenas o nome do arquivo final sugerido no download
-  btnDiagrama.download = 'diagrama-apto-' + apt + '.pdf';
-
+  // Deixamos o href do HTML agir livremente, apenas ouvimos o clique para o alerta
   btnDiagrama.addEventListener('click', () => {
     setTimeout(() => {
       alert('Download concluído ou arquivo aberto!');
@@ -18,9 +16,7 @@ if (btnDiagrama) {
 // Configuração do Botão Tabela
 const btnTabela = document.getElementById('download-tabela');
 if (btnTabela) {
-  // Altera apenas o nome do arquivo final sugerido no download
-  btnTabela.download = 'tabela-cargas-apto-' + apt + '.pdf';
-
+  // Deixamos o href do HTML agir livremente, apenas ouvimos o clique para o alerta
   btnTabela.addEventListener('click', () => {
     setTimeout(() => {
       alert('Download concluído ou arquivo aberto!');
