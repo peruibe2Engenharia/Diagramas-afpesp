@@ -1,11 +1,15 @@
 // Captura o número do apartamento pela URL ou define '301' como padrão
-const apt = new URLSearchParams(location.search).get('apto') || '301';
+const apt = new URLSearchParams(location.search).get('apto') || '101';
 document.getElementById('apt-num').textContent = apt;
 
-// Configuração do Botão Diagrama
+
+// O HTML manda o arquivo, o JS apenas força o download do Diagrama
 const btnDiagrama = document.getElementById('download-diagrama');
+
 if (btnDiagrama) {
-  // Deixamos o href do HTML agir livremente, apenas ouvimos o clique para o alerta
+  // ATENÇÃO: É essa linha abaixo que força o navegador a BAIXAR em vez de abrir!
+  btnDiagrama.download = 'diagrama-apto-' + apt + '.pdf';
+
   btnDiagrama.addEventListener('click', () => {
     setTimeout(() => {
       alert('Download concluído ou arquivo aberto!');
@@ -13,10 +17,14 @@ if (btnDiagrama) {
   });
 }
 
-// Configuração do Botão Tabela
+
+// O HTML manda o arquivo, o JS apenas força o download da Tabela
 const btnTabela = document.getElementById('download-tabela');
+
 if (btnTabela) {
-  // Deixamos o href do HTML agir livremente, apenas ouvimos o clique para o alerta
+  // ATENÇÃO: É essa linha abaixo que força o navegador a BAIXAR em vez de abrir!
+  btnTabela.download = 'tabela-cargas-apto-' + apt + '.pdf';
+
   btnTabela.addEventListener('click', () => {
     setTimeout(() => {
       alert('Download concluído ou arquivo aberto!');
